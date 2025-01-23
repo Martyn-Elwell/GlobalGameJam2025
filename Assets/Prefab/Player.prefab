@@ -245,7 +245,7 @@ MonoBehaviour:
   walkSpeed: 7
   sprintSpeed: 8.5
   crouchSpeed: 5
-  jumpForce: 1.5
+  jumpForce: 1
   crouchHeight: 1.4
   standingHeight: 1.8
   moveInput: {x: 0, y: 0}
@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 90579655491fa5848b1e3e29f9348551, type: 3}
   m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
