@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private Transform cameraTransform;
     private float verticalLookRotation;
+    private GameObject mesh;
 
 
     void Awake()
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Camera _camera = GetComponentInChildren<Camera>();
         cameraTransform = _camera.gameObject.transform;
+        MeshRenderer meshRenderer= GetComponentInChildren<MeshRenderer>();
+        mesh = meshRenderer.gameObject;
     }
 
 
@@ -119,6 +122,8 @@ public class PlayerController : MonoBehaviour
         isCrouching = !isCrouching;
         float currentHeight = isCrouching ? crouchHeight : standingHeight;
         characterController.height = currentHeight;
+        characterController.center = new Vector3(0, currentHeight / 2, 0);
         cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, currentHeight, cameraTransform.localPosition.z);
+        mesh.transform.localScale = new Vector3(1, currentHeight / 2, 1);
     }
 }
