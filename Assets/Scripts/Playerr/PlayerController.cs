@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         float currentHeight = isCrouching ? crouchHeight : standingHeight;
         characterController.height = currentHeight;
         characterController.center = new Vector3(0, currentHeight / 2, 0);
-        cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, currentHeight, cameraTransform.localPosition.z);
+        cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, currentHeight - 0.2f, cameraTransform.localPosition.z);
         mesh.transform.localScale = new Vector3(1, currentHeight / 2, 1);
     }
 }
